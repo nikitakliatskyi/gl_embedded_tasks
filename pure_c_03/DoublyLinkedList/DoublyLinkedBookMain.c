@@ -31,8 +31,9 @@ int main() {
 
   puts("\nreversed output:");
   Node *current_node = &node5;
-  for (; current_node != NULL; current_node = current_node->previous)
+  for (; current_node != NULL; current_node = current_node->previous) {
     Book_Print(current_node->book);
+  }
 
   return 0;
 }
