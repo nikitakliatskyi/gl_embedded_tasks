@@ -19,10 +19,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stm32f4xx_it.h"
-#include "scheme.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -200,7 +199,7 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles EXTI line[9:5] interrupts.data
+  * @brief This function handles EXTI line[9:5] interrupts.
   */
 void EXTI9_5_IRQHandler(void)
 {
