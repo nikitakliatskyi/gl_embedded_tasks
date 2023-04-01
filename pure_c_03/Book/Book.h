@@ -11,8 +11,6 @@ typedef enum {
 const char *Language_ToString(Language language);
 
 typedef struct Book {
-  struct Book *next;
-
   const char *title;
   float price;
   unsigned int pages_amount;

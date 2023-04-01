@@ -12,14 +12,14 @@
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	switch(GPIO_Pin)
 	{
-		case GPIO_PIN_9:	// speed up
+		case GPIO_PIN_9:	// speed down
 			if(schemeData.Delay <= 1000 - 50)
 			{
 				schemeData.Delay += 50;
 			}
 		break;
 
-		case GPIO_PIN_11:	// speed down
+		case GPIO_PIN_11:	// speed up
 			if(schemeData.Delay >= 0 + 50)
 			{
 				schemeData.Delay -= 50;
