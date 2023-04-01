@@ -17,6 +17,7 @@ Implemented types of linked list:
 - [Doubly Linked List](DoublyLinkedList)
 - [Circular Singly Linked List](CircularSinglyLinkedList)
 - [Circular Doubly Linked List](CircularDoublyLinkedList)
+
 Each type has it's own header and source files, located in corresponding catalogs
 
 ### List Elements
@@ -183,5 +184,5 @@ do {
 ```
 
 ## Additional Materials
-![Program Output](additional_materials/execution_result.png)
 [Google Drive Folder With Additional Materials](https://drive.google.com/drive/folders/1ydIDowiMOQzbLxl-tD_yfvUDbcQlaGIb?usp=share_link)
+![Program Output](additional_materials/execution_result.png)

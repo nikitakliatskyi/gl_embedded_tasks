@@ -9,8 +9,11 @@
 ## [Solution](maze_lib.c)
 Maze is represented as two-dimensional array of char (with 11 rows and 11 columns in current implementation). Symbols '|' and '-' represent labyrinth's walls, and space - empty space, possible ways. Math solution is drawn with '#'.
 So, with graphical representation of the maze looking like this:
+
 ![Graphical maze representation](additional_materials/graphical_math.png)
+
 It's represented in this program like this:
+
 ![Program maze representation](additional_materials/execution_result.png)
 
 Printing maze is done with function, that just iterates through array, representing labyrinth, and prints every element.
@@ -91,5 +94,5 @@ print_maze(ROWS, COLS, maze);
 ```
 
 ## Additional Materials
-![Program Output](additional_materials/execution_result.png)
 [Google Drive Folder With Additional Materials](https://drive.google.com/drive/folders/1S_OR1QAltnGfACZpj4HkSNRZO1ld5_aY?usp=share_link)
+![Program Output](additional_materials/execution_result.png)

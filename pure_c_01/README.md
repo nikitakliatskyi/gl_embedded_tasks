@@ -30,5 +30,5 @@ printf("Group number: %d\n"
 ```
 
 ## Additional Materials
-![Program Output](additional_materials/execution_result.png)
 [Google Drive Folder With Additional Materials](https://drive.google.com/drive/folders/1SrlqJSQuhzOhNr49mxPd0xnu69ddVhVk?usp=share_link)
+![Program Output](additional_materials/execution_result.png)

@@ -36,5 +36,5 @@ printf("sin(x + y) * sin(x - y) = %lf\n", z2);
 ```
 
 ## Additional Materials
-![Program Output](additional_materials/execution_result.png)
 [Google Drive Folder With Additional Materials](https://drive.google.com/drive/folders/1GEbFZ1Bq5zHfxTTVcIxt6ecW6pCkitc2?usp=share_link)
+![Program Output](additional_materials/execution_result.png)
