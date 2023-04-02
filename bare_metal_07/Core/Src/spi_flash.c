@@ -95,7 +95,7 @@ void Read_Sector(char output[SYMS_PER_SECTOR], uint32_t adr)
 	Transmit_Receive(tx_buf, rx_buf, SYMS_PER_SECTOR);
 	Set_SPI_Status(DISABLED);
 
-	for(int j = 0; j < SYMS_PER_SECTOR && rx_buf[j + 4 - 1] != '\n'; j++)
+	for(int j = 0; j < (SYMS_PER_SECTOR - 4) && rx_buf[j + 4 - 1] != '\n'; j++)
 	{
 		output[j] = rx_buf[j + 4];
 	}
