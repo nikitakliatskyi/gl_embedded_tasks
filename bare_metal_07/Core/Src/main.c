@@ -31,6 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -79,7 +80,6 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -91,28 +91,38 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  char text_buffer[SECTORS_AMOUNT][SYMS_PER_SECTOR] = { 0 };
+  char *text[] = {
+		  "From: nikitakliatskyi, nikitakliatskyi@gmail.com\n",
+		  "Mentor: Minloud, artem.dovhal@globallogic.com\n",
+		  "Date: 27.03.23\n",
+		  "TIME CAPSULE\n",
+		  "Each man on earth has his own fate,\n",
+		  "Each one his highway wide:\n",
+		  "This one builds up, that one lays waste,\n",
+		  "And that casts greedy eyes\n",
+		  "O'er all the globe, to find somewhere\n",
+		  "A land not yet enslaved,\n",
+		  "Which he could conquer and then bear \n",
+		  "With him into the grave.\n"
+  };
 
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_7, GPIO_PIN_SET);
   HAL_Delay(100);
-  char text_buffer[20][100] = { 0 };
-  char *text = "From: nikitakliatskyi, nikitakliatskyi@gmail.com\n"
-		  "Mentor: Minloud, artem.dovhal@globallogic.com\n"
-		  "Date: 27.03.23\n"
-		  "TIME CAPSULE\n"
-		  "Each man on earth has his own fate,\n"
-		  "Each one his highway wide:\n"
-		  "This one builds up, that one lays waste,\n"
-		  "And that casts greedy eyes\n"
-		  "O’er all the globe, to find somewhere\n"
-		  "A land not yet enslaved,\n"
-		  "Which he could conquer and then bear \n"
-		  "With him into the grave.\n";
 
-  Read_Capsule(text_buffer);
+  Erase_Memory();
   HAL_Delay(100);
-  Erase_Capsule();
+
+  for(uint32_t i = 0; i < (sizeof(text) / sizeof(char*)); i++)
+  {
+	  Write_Sector(text[i], i * SECTOR_SIZE);
+  }
   HAL_Delay(100);
-  Write_Capsule(text);
+
+  for(uint32_t i = 0; i < SECTORS_AMOUNT; i++)
+  {
+	  Read_Sector(text_buffer[i], i * SECTOR_SIZE);
+  }
 
   while (1)
   {

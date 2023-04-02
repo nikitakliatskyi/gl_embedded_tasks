@@ -10,8 +10,12 @@
 #ifndef INC_SPI_FLASH_H_
 #define INC_SPI_FLASH_H_
 
-void Read_Capsule(char output[][100]);
-void Erase_Capsule();
-void Write_Capsule(const char *text);
+#define SECTORS_AMOUNT 20
+#define SECTOR_SIZE 4096
+#define SYMS_PER_SECTOR 100
+
+void Read_Sector(char output[SYMS_PER_SECTOR], uint32_t adr);
+void Write_Sector(const char *text, uint32_t adr);
+void Erase_Memory(void);
 
 #endif /* INC_SPI_FLASH_H_ */
